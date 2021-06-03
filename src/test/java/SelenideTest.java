@@ -15,7 +15,7 @@ public class SelenideTest {
     private static final int ISSUE_NUMBER = 68;
 
     @Test
-    public void testIssueSearch() {
+    public void issueSearchSelenideTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open(BASE_URL);
         $(".header-search-input").click();

@@ -5,7 +5,7 @@ public class AnnotatedStepsTest {
     private WebSteps steps = new WebSteps();
 
     @Test
-    public void testIssueSearchAnnotations() {
+    public void issueSearchAnnotationsTest() {
         steps.openMainPage();
         steps.searchForRepository("eroshenkoam/allure-example");
         steps.goToRepository("eroshenkoam/allure-example");

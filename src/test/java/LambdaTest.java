@@ -7,14 +7,14 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class LambdaTests {
+public class LambdaTest {
 
     private static final String BASE_URL = "https://github.com";
     private static final String REPOSITORY = "eroshenkoam/allure-example";
     private static final int ISSUE_NUMBER = 68;
 
     @Test
-    public void testIssueSearch() {
+    public void issueSearchLambdaTest() {
         step("Открываем главную страницу", (s) -> {
             s.parameter("URL", BASE_URL);
             open(BASE_URL);
