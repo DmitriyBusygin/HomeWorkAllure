@@ -10,7 +10,9 @@ repositories {
 dependencies {
     testImplementation(
             "com.codeborne:selenide:5.20.3",
-            "org.junit.jupiter:junit-jupiter-api:5.7.1"
+            "org.junit.jupiter:junit-jupiter-api:5.7.1",
+            "org.aspectj:aspectjweaver:1.9.6",
+            "io.qameta.allure:allure-selenide:2.14.0"
     )
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.7.1"
 }
