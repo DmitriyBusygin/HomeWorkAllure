@@ -23,6 +23,6 @@ public class SelenideTest {
         $(".header-search-input").pressEnter();
         $(byAttribute("href", "/" + REPOSITORY)).click();
         $(withText("Issues")).click();
-        $(withText("#" + ISSUE_NUMBER)).should(exist);
+        $(withText("#" + ISSUE_NUMBER)).should(visible);
     }
 }
