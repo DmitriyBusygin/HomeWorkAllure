@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exist;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -34,7 +35,7 @@ public class LambdaTest {
         });
         step("Проверяем, что Issue с номером " + ISSUE_NUMBER + " существет", (s) -> {
             s.parameter("Number", ISSUE_NUMBER);
-            $(withText("#" + ISSUE_NUMBER)).should(exist);
+            $(withText("#" + ISSUE_NUMBER)).should(visible);
         });
     }
 }
