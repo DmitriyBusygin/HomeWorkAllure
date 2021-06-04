@@ -14,9 +14,7 @@ public class WebSteps {
     }
     @Step("Ищем репозиторий {repository}")
     public void searchForRepository(String repository) {
-        $(".header-search-input").click();
-        $(".header-search-input").setValue(repository);
-        $(".header-search-input").pressEnter();
+        $(".header-search-input").setValue(repository).submit();       
     }
     @Step("Переходим в репозиторий {repository}")
     public void goToRepository(String repository) {
