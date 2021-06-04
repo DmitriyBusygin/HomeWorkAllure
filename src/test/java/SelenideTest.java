@@ -18,9 +18,7 @@ public class SelenideTest {
     public void issueSearchSelenideTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open(BASE_URL);
-        $(".header-search-input").click();
-        $(".header-search-input").setValue(REPOSITORY);
-        $(".header-search-input").pressEnter();
+        $(".header-search-input").setValue(REPOSITORY).submit();
         $(byAttribute("href", "/" + REPOSITORY)).click();
         $(withText("Issues")).click();
         $(withText("#" + ISSUE_NUMBER)).should(visible);
