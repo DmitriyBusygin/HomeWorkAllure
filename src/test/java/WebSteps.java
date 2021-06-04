@@ -8,26 +8,26 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class WebSteps {
 
-    @Step("Открываем главную старницу")
+    @Step("ГЋГІГЄГ°Г»ГўГ ГҐГ¬ ГЈГ«Г ГўГ­ГіГѕ Г±ГІГ Г°Г­ГЁГ¶Гі")
     public void openMainPage() {
         open("https://github.com");
     }
-    @Step("Ищем репозиторий {repository}")
+    @Step("Г€Г№ГҐГ¬ Г°ГҐГЇГ®Г§ГЁГІГ®Г°ГЁГ© {repository}")
     public void searchForRepository(String repository) {
         $(".header-search-input").click();
         $(".header-search-input").setValue(repository);
         $(".header-search-input").pressEnter();
     }
-    @Step("Переходим в репозиторий {repository}")
+    @Step("ГЏГҐГ°ГҐГµГ®Г¤ГЁГ¬ Гў Г°ГҐГЇГ®Г§ГЁГІГ®Г°ГЁГ© {repository}")
     public void goToRepository(String repository) {
         $(byAttribute("href", "/" + repository)).click();
     }
-    @Step("Открываем таб Issues в репозитории")
+    @Step("ГЋГІГЄГ°Г»ГўГ ГҐГ¬ ГІГ ГЎ Issues Гў Г°ГҐГЇГ®Г§ГЁГІГ®Г°ГЁГЁ")
     public void openIssueTab() {
         $(withText("Issues")).click();
     }
-    @Step("Проверяем, что Issue с номером {number} существет")
+    @Step("ГЏГ°Г®ГўГҐГ°ГїГҐГ¬, Г·ГІГ® Issue Г± Г­Г®Г¬ГҐГ°Г®Г¬ {number} Г±ГіГ№ГҐГ±ГІГўГҐГІ")
     public void shouldSeeIssueWithNumber(int number) {
-        $(withText("#" + number)).should(exist);
+        $(withText("#" + number)).should(visible);
     }
 }
