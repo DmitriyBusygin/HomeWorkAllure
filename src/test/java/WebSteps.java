@@ -8,25 +8,25 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class WebSteps {
 
-    @Step("Îòêðûâàåì ãëàâíóþ ñòàðíèöó")
+    @Step("Открываем главную старницу")
     public void openMainPage() {
         open("https://github.com");
     }
-    @Step("Èùåì ðåïîçèòîðèé {repository}")
+    @Step("Ищем репозиторий {repository}")
     public void searchForRepository(String repository) {
         $(".header-search-input").click();
         $(".header-search-input").setValue(repository);
         $(".header-search-input").pressEnter();
     }
-    @Step("Ïåðåõîäèì â ðåïîçèòîðèé {repository}")
+    @Step("Переходим в репозиторий {repository}")
     public void goToRepository(String repository) {
         $(byAttribute("href", "/" + repository)).click();
     }
-    @Step("Îòêðûâàåì òàá Issues â ðåïîçèòîðèè")
+    @Step("Открываем таб Issues в репозитории")
     public void openIssueTab() {
         $(withText("Issues")).click();
     }
-    @Step("Ïðîâåðÿåì, ÷òî Issue ñ íîìåðîì {number} ñóùåñòâåò")
+    @Step("Проверяем, что Issue с номером {number} существет")
     public void shouldSeeIssueWithNumber(int number) {
         $(withText("#" + number)).should(visible);
     }
