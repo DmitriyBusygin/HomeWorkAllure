@@ -16,24 +16,24 @@ public class LambdaTest {
 
     @Test
     public void issueSearchLambdaTest() {
-        step("Îòêðûâàåì ãëàâíóþ ñòðàíèöó", (s) -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð³Ð»Ð°Ð²Ð½ÑƒÑŽ ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ", (s) -> {
             s.parameter("URL", BASE_URL);
             open(BASE_URL);
         });
-        step("Èùåì ðåïîçèòîðèé", (s) -> {
+        step("Ð˜Ñ‰ÐµÐ¼ Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹", (s) -> {
             s.parameter("repository", REPOSITORY);
             $(".header-search-input").click();
             $(".header-search-input").setValue(REPOSITORY);
             $(".header-search-input").pressEnter();
         });
-        step("Ïåðåõîäèì â ðåïîçèòîðèé", (s) -> {
+        step("ÐŸÐµÑ€ÐµÑ…Ð¾Ð´Ð¸Ð¼ Ð² Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¹", (s) -> {
             s.parameter("repository", REPOSITORY);
             $(byAttribute("href", "/" + REPOSITORY)).click();
         });
-        step("Îòêðûâàåì òàá Issues â ðåïîçèòîðèè", () -> {
+        step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ñ‚Ð°Ð± Issues Ð² Ñ€ÐµÐ¿Ð¾Ð·Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸", () -> {
             $(withText("Issues")).click();
         });
-        step("Ïðîâåðÿåì, ÷òî Issue ñ íîìåðîì " + ISSUE_NUMBER + " ñóùåñòâåò", (s) -> {
+        step("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼, Ñ‡Ñ‚Ð¾ Issue Ñ Ð½Ð¾Ð¼ÐµÑ€Ð¾Ð¼ " + ISSUE_NUMBER + " ÑÑƒÑ‰ÐµÑÑ‚Ð²ÐµÑ‚", (s) -> {
             s.parameter("Number", ISSUE_NUMBER);
             $(withText("#" + ISSUE_NUMBER)).should(visible);
         });
