@@ -22,9 +22,7 @@ public class LambdaTest {
         });
         step("Ищем репозиторий", (s) -> {
             s.parameter("repository", REPOSITORY);
-            $(".header-search-input").click();
-            $(".header-search-input").setValue(REPOSITORY);
-            $(".header-search-input").pressEnter();
+            $(".header-search-input").setValue(REPOSITORY).submit();
         });
         step("Переходим в репозиторий", (s) -> {
             s.parameter("repository", REPOSITORY);
