@@ -11,6 +11,5 @@ public class AnnotatedStepsTest {
         steps.goToRepository("eroshenkoam/allure-example");
         steps.openIssueTab();
         steps.shouldSeeIssueWithNumber(68);
-        //комментарий для ДЗ к 8ому таску
     }
 }
